@@ -1,0 +1,93 @@
+churn rate % = DIVIDE (CALCULATE(COUNT('01 Churn-Dataset'[Churn]), '01 Churn-Dataset'[Churn] = "yes" ),CALCULATE ( COUNT ('01 Churn-Dataset'[Churn]), ALLSELECTED ('01 Churn-Dataset'[Churn] ) )
+)
+
+Count of Churn for Yes = 
+CALCULATE(COUNTA('01 Churn-Dataset'[Churn]), '01 Churn-Dataset'[Churn] IN { "Yes" })
+
+Count of DeviceProtection for Yes = 
+CALCULATE(
+	COUNTA('01 Churn-Dataset'[DeviceProtection]),
+	'01 Churn-Dataset'[DeviceProtection] IN { "Yes" }
+)
+
+
+Count of MultipleLines for Yes = 
+CALCULATE(
+	COUNTA('01 Churn-Dataset'[MultipleLines]),
+	'01 Churn-Dataset'[MultipleLines] IN { "Yes" }
+)
+
+
+Count of OnlineBackup for Yes = 
+CALCULATE(
+	COUNTA('01 Churn-Dataset'[OnlineBackup]),
+	'01 Churn-Dataset'[OnlineBackup] IN { "Yes" }
+)
+
+
+Count of OnlineSecurity for Yes = 
+CALCULATE(
+	COUNTA('01 Churn-Dataset'[OnlineSecurity]),
+	'01 Churn-Dataset'[OnlineSecurity] IN { "Yes" }
+)
+
+
+Count of PhoneService for Yes = 
+CALCULATE(
+	COUNTA('01 Churn-Dataset'[PhoneService]),
+	'01 Churn-Dataset'[PhoneService] IN { "Yes" }
+)
+
+
+Count of StreamingMovies for Yes = 
+CALCULATE(
+	COUNTA('01 Churn-Dataset'[StreamingMovies]),
+	'01 Churn-Dataset'[StreamingMovies] IN { "Yes" }
+)
+
+
+Count of StreamingTV for Yes = 
+CALCULATE(COUNTA('01 Churn-Dataset'[StreamingTV]), '01 Churn-Dataset'[StreamingTV] IN { "Yes" })
+
+
+Count of TechSupport for Yes = 
+CALCULATE(COUNTA('01 Churn-Dataset'[TechSupport]), '01 Churn-Dataset'[TechSupport] IN { "Yes" })
+
+
+Dependents in % = DIVIDE(CALCULATE(COUNT('01 Churn-Dataset'[Dependents]), '01 Churn-Dataset'[Dependents]="Yes", '01 Churn-Dataset'[Churn]= "Yes"), CALCULATE(COUNT('01 Churn-Dataset'[Dependents]), '01 Churn-Dataset'[Churn]="Yes"),0)
+
+
+Device protection in % = DIVIDE(CALCULATE(COUNT('01 Churn-Dataset'[DeviceProtection]), '01 Churn-Dataset'[DeviceProtection]="Yes", '01 Churn-Dataset'[Churn]="Yes"),CALCULATE(COUNT('01 Churn-Dataset'[DeviceProtection]),'01 Churn-Dataset'[Churn]="Yes"),0)
+
+
+Multiple lines no in % = DIVIDE(CALCULATE(COUNT('01 Churn-Dataset'[MultipleLines]), '01 Churn-Dataset'[MultipleLines]="No", '01 Churn-Dataset'[Churn]="Yes"),CALCULATE(COUNT('01 Churn-Dataset'[MultipleLines]),'01 Churn-Dataset'[Churn]="Yes", '01 Churn-Dataset'[MultipleLines] <> "No phone service"),0)
+
+
+Multiple Lines yes in % = DIVIDE(CALCULATE(COUNT('01 Churn-Dataset'[MultipleLines]), '01 Churn-Dataset'[MultipleLines]="Yes", '01 Churn-Dataset'[Churn]= "Yes"), CALCULATE(COUNT('01 Churn-Dataset'[MultipleLines]), '01 Churn-Dataset'[Churn]="Yes", '01 Churn-Dataset'[MultipleLines] <> "No phone service"),0)
+
+
+Online Bacup in % = DIVIDE(CALCULATE(COUNT('01 Churn-Dataset'[OnlineBackup]), '01 Churn-Dataset'[OnlineBackup]="Yes", '01 Churn-Dataset'[Churn]="Yes"),CALCULATE(COUNT('01 Churn-Dataset'[OnlineBackup]),'01 Churn-Dataset'[Churn]="Yes"),0)
+
+Online Sec. in % = DIVIDE(CALCULATE(COUNT('01 Churn-Dataset'[OnlineSecurity]), '01 Churn-Dataset'[OnlineSecurity]="Yes", '01 Churn-Dataset'[Churn]="Yes"),CALCULATE(COUNT('01 Churn-Dataset'[OnlineSecurity]),'01 Churn-Dataset'[Churn]="Yes"),0)
+
+Partner in % = DIVIDE(CALCULATE(COUNT('01 Churn-Dataset'[Partner]), '01 Churn-Dataset'[Partner]="Yes", '01 Churn-Dataset'[Churn]= "Yes"), CALCULATE(COUNT('01 Churn-Dataset'[Partner]), '01 Churn-Dataset'[Churn]="Yes"),0)
+
+
+Phone Service in % = DIVIDE(CALCULATE(COUNT('01 Churn-Dataset'[PhoneService]), '01 Churn-Dataset'[PhoneService]="Yes", '01 Churn-Dataset'[Churn]="Yes"),CALCULATE(COUNT('01 Churn-Dataset'[PhoneService]),'01 Churn-Dataset'[Churn]="Yes"),0)
+
+
+SeniorCitizen in % = DIVIDE(CALCULATE(COUNT('01 Churn-Dataset'[SeniorCitizen]), '01 Churn-Dataset'[SeniorCitizen]=1, '01 Churn-Dataset'[Churn]= "Yes"), CALCULATE(COUNT('01 Churn-Dataset'[SeniorCitizen]), '01 Churn-Dataset'[Churn]="Yes"),0)
+
+
+Streaming Movies in % = DIVIDE(CALCULATE(COUNT('01 Churn-Dataset'[StreamingMovies]), '01 Churn-Dataset'[StreamingMovies]="Yes", '01 Churn-Dataset'[Churn]="Yes"),CALCULATE(COUNT('01 Churn-Dataset'[StreamingMovies]),'01 Churn-Dataset'[Churn]="Yes"),0)
+
+
+Streaming TV in % = DIVIDE(CALCULATE(COUNT('01 Churn-Dataset'[StreamingTV]), '01 Churn-Dataset'[StreamingTV]="Yes", '01 Churn-Dataset'[Churn]="Yes"),CALCULATE(COUNT('01 Churn-Dataset'[StreamingTV]),'01 Churn-Dataset'[Churn]="Yes"),0)
+
+
+Tech Support in % = DIVIDE(CALCULATE(COUNT('01 Churn-Dataset'[TechSupport]), '01 Churn-Dataset'[TechSupport]="Yes", '01 Churn-Dataset'[Churn]="Yes"),CALCULATE(COUNT('01 Churn-Dataset'[TechSupport]),'01 Churn-Dataset'[Churn]="Yes"),0)
+
+
+
+
+
