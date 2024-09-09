@@ -8,7 +8,8 @@ Problem Statement
 Creating comprehensive Power BI dashboards showcasing insights on Call Centre Trends, Customer Retention, and Diversity & Inclusion to drive business impact.
 
 
-![image](https://github.com/user-attachments/assets/b76420ef-a2ee-4c46-b568-dfc9b79de1a6)
+![image](https://github.com/user-attachments/assets/5fab2261-75d3-4616-aa4a-5d963afb62cd)
+
 
 
 Task 1
